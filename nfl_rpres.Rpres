@@ -1,4 +1,4 @@
-NFL Wins/Losses: Games and Against the Spread
+NFL Wins and Losses: Games and Against the Spread
 ========================================================
 author: Andy Rosa
 date: 2014-08-21
