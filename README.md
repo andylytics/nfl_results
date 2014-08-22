@@ -1,4 +1,4 @@
-nfl_results
+NFL Results Shiny App
 ===========
 
 NFL game results Shiny App for Developing Data Products. This application:
