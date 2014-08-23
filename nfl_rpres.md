@@ -1,20 +1,21 @@
-NFL Wins/Losses: Game and Against the Spread
+NFL Visualized Results: Game and Against the Spread
 ========================================================
 author: Andy Rosa
 date: 2014-08-21
 
-First Slide
+I heard you like American Football...
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+So I built you [this visualization web app](http://andylytics.shinyapps.io/nfl_data_project/) that allows you to:
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Choose any season between 2006 - 2013
+- Choose whether you want to see the Game result or the Against the Spread (ATS) result
+- Visualize how each team performed by week
 
-Slide With Code
+NFL Data
 ========================================================
+
+I Using a [nice resource for NFL data](http://www.repole.com/sun4cast/data.html)
 
 
 ```r
