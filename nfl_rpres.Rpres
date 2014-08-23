@@ -15,15 +15,55 @@ So I built you [this visualization web app](http://andylytics.shinyapps.io/nfl_d
 NFL Data
 ========================================================
 
-I Using a [nice resource for NFL data](http://www.repole.com/sun4cast/data.html)
+I wrote [a script](https://github.com/andylytics/nfl_results/blob/master/data_prepare.R) that uses a [nice resource for NFL data](http://www.repole.com/sun4cast/data.html) to create a 2006-2013 dataset of team performance for games and against the spread.
 
 ```{r}
-summary(cars)
+d <- read.csv("nfldata.csv")
+head(d[, c("TeamName", "Game.Result", "ATS.Result")])
 ```
 
-Slide With Plot
+Use the App to Visual Team Performance!!!
 ========================================================
 
-```{r, echo=FALSE}
-plot(cars)
+```{r, echo=FALSE, width=8, height=10}
+library(ggplot2)
+library(dplyr)
+
+d <- filter(d, year == 2013)
+# reorder factor levels for plot legend
+d$Game.Result <- factor(d$Game.Result, levels = c("Win", "Loss", "Tie"))
+d$ATS.Result <- factor(d$ATS.Result, levels = c("Win", "Loss", "Push"))
+# teams <- as.character(unique(d$TeamName))
+# d <- filter(d, TeamName %in% teams[1:15])
+
+ggplot(d, aes(x = factor(TeamName), y = week, colour = Game.Result)) +
+        geom_point(size = 6, shape = 15) +
+        coord_flip() +
+        theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+        scale_colour_manual(values = c("#00BA38", "#F8766D", "#619CFF")) +
+        scale_y_discrete(breaks = unique(d$week)) +
+        ggtitle(paste0("GAME RESULTS 2013 by Team and Week"))
+```
+
+You can view the ATS Results as well. Enjoy!
+====================
+
+```{r, echo=FALSE, width=8, height=10}
+library(ggplot2)
+library(dplyr)
+
+#d <- filter(d, year == 2013)
+# reorder factor levels for plot legend
+#d$Game.Result <- factor(d$Game.Result, levels = c("Win", "Loss", "Tie"))
+#d$ATS.Result <- factor(d$ATS.Result, levels = c("Win", "Loss", "Push"))
+# teams <- as.character(unique(d$TeamName))
+# d <- filter(d, TeamName %in% teams[1:15])
+
+ggplot(d, aes(x = factor(TeamName), y = week, colour = ATS.Result)) +
+        geom_point(size = 6, shape = 15) +
+        coord_flip() +
+        theme(axis.title.y = element_blank(), axis.title.x = element_blank(), legend.title = element_blank()) +
+        scale_colour_manual(values = c("#00BA38", "#F8766D", "#619CFF")) +
+        scale_y_discrete(breaks = unique(d$week)) +
+        ggtitle(paste0("ATS RESULTS 2013 by Team and Week"))
 ```

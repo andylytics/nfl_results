@@ -15,24 +15,30 @@ So I built you [this visualization web app](http://andylytics.shinyapps.io/nfl_d
 NFL Data
 ========================================================
 
-I Using a [nice resource for NFL data](http://www.repole.com/sun4cast/data.html)
+I wrote [a script](https://github.com/andylytics/nfl_results/blob/master/data_prepare.R) that uses a [nice resource for NFL data](http://www.repole.com/sun4cast/data.html) to create a 2006-2013 dataset of team performance for games and against the spread.
 
 
 ```r
-summary(cars)
+d <- read.csv("nfldata.csv")
+head(d[, c("TeamName", "Game.Result", "ATS.Result")])
 ```
 
 ```
-     speed           dist    
- Min.   : 4.0   Min.   :  2  
- 1st Qu.:12.0   1st Qu.: 26  
- Median :15.0   Median : 36  
- Mean   :15.4   Mean   : 43  
- 3rd Qu.:19.0   3rd Qu.: 56  
- Max.   :25.0   Max.   :120  
+             TeamName Game.Result ATS.Result
+1      Miami Dolphins        Loss       Loss
+2 Pittsburgh Steelers         Win        Win
+3   Arizona Cardinals         Win       Loss
+4     Atlanta Falcons         Win        Win
+5    Baltimore Ravens         Win        Win
+6       Buffalo Bills        Loss        Win
 ```
 
-Slide With Plot
+Use the App to Visual Team Performance!!!
 ========================================================
 
 ![plot of chunk unnamed-chunk-2](nfl_rpres-figure/unnamed-chunk-2.png) 
+
+You can view the ATS Results as well. Enjoy!
+====================
+
+![plot of chunk unnamed-chunk-3](nfl_rpres-figure/unnamed-chunk-3.png) 
