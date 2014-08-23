@@ -45,7 +45,7 @@ ggplot(d, aes(x = factor(TeamName), y = week, colour = Game.Result)) +
         ggtitle(paste0("GAME RESULTS 2013 by Team and Week"))
 ```
 
-You can view the ATS Results as well. Enjoy!
+ATS Results as well. Enjoy!
 ====================
 
 ```{r, echo=FALSE, width=8, height=10}

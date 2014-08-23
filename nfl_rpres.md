@@ -38,7 +38,7 @@ Use the App to Visual Team Performance!!!
 
 ![plot of chunk unnamed-chunk-2](nfl_rpres-figure/unnamed-chunk-2.png) 
 
-You can view the ATS Results as well. Enjoy!
+ATS Results as well. Enjoy!
 ====================
 
 ![plot of chunk unnamed-chunk-3](nfl_rpres-figure/unnamed-chunk-3.png) 
